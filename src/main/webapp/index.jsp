@@ -5,6 +5,6 @@
 	<title>GameCenter</title>
 </head>
 <body>
-	<h1>index</h1>
+	<a href="${pageContext.request.contextPath }/landlord/home">Fight Landload</a>
 </body>
 </html>
