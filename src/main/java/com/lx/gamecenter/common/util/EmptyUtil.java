@@ -11,4 +11,8 @@ public class EmptyUtil {
 	public static boolean isEmpty(String string) {
 		return null == string || "".equals(string);
 	}
+	
+	public static boolean isEmpty(Object obj) {
+		return null == obj;
+	}
 }

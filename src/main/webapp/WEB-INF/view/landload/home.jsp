@@ -6,5 +6,6 @@
 </head>
 <body>
 	<h3>Fight Landload</h3>
+	Welcome ${user.nickname }
 </body>
 </html>

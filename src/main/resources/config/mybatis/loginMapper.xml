@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lx.gamecenter.dao.login.LoginDao">
+
+	<select id="loginSubmit" resultType="User">
+		SELECT
+			id AS "id",
+			user_name AS "userName",
+			password AS "password",
+			nickname AS "nickname",
+			registerTime AS "registerTime",
+			lastLoginTime AS "lastLoginTime",
+			lastRequestUrl AS "lastRequestUrl",
+			admin_flag AS "adminFlag"
+		FROM
+			GC_USER
+		WHERE
+			user_name = #{userName}
+		AND password = #{password}
+	</select>
+
+	<insert id="insert" parameterType="java.util.Map">
+		INSERT INTO GC_USER (
+			user_name,
+			password,
+			nickname,
+			registerTime,
+			lastLoginTime
+		) VALUES (
+			#{userName,jdbcType=VARCHAR},
+			#{password,jdbcType=VARCHAR},
+			#{nickname,jdbcType=VARCHAR},
+			#{registerTime,jdbcType=TIMESTAMP},
+			#{lastLoginTime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+</mapper>

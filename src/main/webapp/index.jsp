@@ -2,9 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>GameCenter</title>
+	<title>Game Center</title>
 </head>
 <body>
-	<a href="${pageContext.request.contextPath }/landlord/home">Fight Landload</a>
+	<div>
+		<a href="${pageContext.request.contextPath }/login">登录</a>
+		<a href="${pageContext.request.contextPath }/register">注册</a>
+	</div>
+	<div><a href="${pageContext.request.contextPath }/landlord/home">Fight Landload</a></div>
 </body>
 </html>
