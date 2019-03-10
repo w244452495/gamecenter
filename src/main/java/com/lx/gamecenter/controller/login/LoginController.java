@@ -42,7 +42,6 @@ public class LoginController extends BaseController {
 		}
 		String key = this.getJSessionId(request);
 		CacheUtil.setAndExpire(key, JSON.toJSONString(user), 60);
-		System.out.println(CacheUtil.get(key));
 		request.getSession().setAttribute("user", user);
 		return "/landload/home";
 	}

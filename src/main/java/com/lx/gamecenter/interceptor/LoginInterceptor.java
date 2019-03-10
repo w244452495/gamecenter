@@ -20,6 +20,7 @@ public class LoginInterceptor extends BaseController implements HandlerIntercept
 			CacheUtil.expire(jSessionId, 60);
 			return true;
 		}
+		response.sendRedirect(request.getContextPath() + "/login");
 		return false;
 	}
 
