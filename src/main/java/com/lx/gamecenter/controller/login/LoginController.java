@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
+import com.lx.gamecenter.common.constants.GameCenterConstants;
 import com.lx.gamecenter.common.util.CacheUtil;
 import com.lx.gamecenter.common.util.EmptyUtil;
 import com.lx.gamecenter.controller.base.BaseController;
@@ -40,8 +41,6 @@ public class LoginController extends BaseController {
 		if (EmptyUtil.isEmpty(user)) {
 			return "login/login";
 		}
-		String key = this.getJSessionId(request);
-		CacheUtil.setAndExpire(key, JSON.toJSONString(user), 60);
 		request.getSession().setAttribute("user", user);
 		return "/landload/home";
 	}

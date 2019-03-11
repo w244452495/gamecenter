@@ -38,13 +38,4 @@ public abstract class BaseController {
 		return params;
 	}
 	
-	protected String getJSessionId(HttpServletRequest request) {
-		Cookie[] cookies = request.getCookies();
-		for(Cookie cookie : cookies) {
-			if ("JSESSIONID".equals(cookie.getName())) {
-				return cookie.getValue();
-			}
-		}
-		return "";
-	}
 }
