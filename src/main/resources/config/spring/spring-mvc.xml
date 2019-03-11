@@ -24,7 +24,7 @@
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/landlord/home"/>
+			<mvc:mapping path="/landlord/**"/>
 			<bean class="com.lx.gamecenter.interceptor.LoginInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>

@@ -14,6 +14,11 @@ public class FightLandlordController extends BaseController {
 
 	@RequestMapping("/home")
 	public ModelAndView homePage(HttpServletRequest request) {
-		return new ModelAndView("/landload/home");
+		return new ModelAndView("/landlord/home");
+	}
+	
+	@RequestMapping("/table")
+	public ModelAndView table(HttpServletRequest request) {
+		return new ModelAndView("/landlord/table");
 	}
 }

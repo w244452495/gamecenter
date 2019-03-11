@@ -19,6 +19,9 @@
 	  		</ul>
 		</div>
 	</div>
-	<h3>Fight Landload</h3>
+	<div class="padding-div">
+		<h3>Fight Landload</h3>
+		<h4><a href="landlord/table">>>>Table 1</a></h4>
+	</div>
 </body>
 </html>
