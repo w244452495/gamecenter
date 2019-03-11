@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSON;
-import com.lx.gamecenter.common.constants.GameCenterConstants;
-import com.lx.gamecenter.common.util.CacheUtil;
 import com.lx.gamecenter.common.util.EmptyUtil;
 import com.lx.gamecenter.controller.base.BaseController;
 import com.lx.gamecenter.entity.user.User;
@@ -26,11 +23,19 @@ public class LoginController extends BaseController {
 
 	@RequestMapping("/login")
 	public ModelAndView	login(HttpServletRequest request) {
+		Object userSession = request.getSession().getAttribute("user");
+		if (!EmptyUtil.isEmpty(userSession)) {
+			return new ModelAndView("redirect:/landlord/home");
+		}
 		return new ModelAndView("login/login");
 	}
 	
 	@RequestMapping("/register")
 	public ModelAndView	register(HttpServletRequest request) {
+		Object userSession = request.getSession().getAttribute("user");
+		if (!EmptyUtil.isEmpty(userSession)) {
+			return new ModelAndView("redirect:/landlord/home");
+		}
 		return new ModelAndView("login/register");
 	}
 	
@@ -39,15 +44,21 @@ public class LoginController extends BaseController {
 		Map<String, Object> params = this.getParams(request);
 		User user = this.loginService.loginSubmit(params);
 		if (EmptyUtil.isEmpty(user)) {
-			return "login/login";
+			return "redirect:/login";
 		}
 		request.getSession().setAttribute("user", user);
-		return "/landload/home";
+		return "redirect:/landlord/home";
 	}
 	
 	@ResponseBody
 	@RequestMapping("/register/submit")
 	public String registerSubmit(HttpServletRequest request) {
 		return this.getParams(request).toString();
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request) {
+		request.getSession().removeAttribute("user");
+		return "redirect:/";
 	}
 }

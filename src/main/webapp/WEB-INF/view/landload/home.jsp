@@ -5,7 +5,11 @@
 	<title>Fight Landload</title>
 </head>
 <body>
-	<h3>Fight Landload</h3>
-	Welcome ${user.nickname }
+	<div>
+		<span>Welcome</span>
+		<a href="${pageContext.request.contextPath }/user/info?username=${user.userName }">${user.nickname }</a>
+		<a href="${pageContext.request.contextPath }/logout">注销</a>
+	</div>
+	<div>Fight Landload</div>
 </body>
 </html>
