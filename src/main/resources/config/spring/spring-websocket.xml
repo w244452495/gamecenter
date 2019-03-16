@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+	http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.2.xsd ">
+	
+	<!-- WebSocket消息处理类 -->
+	<bean id="gameCenterWebSocketHandler" class="com.lx.gamecenter.websocket.handler.GameCenterWebSocketHandler"/>
+	
+	<websocket:handlers>
+		<websocket:mapping handler="gameCenterWebSocketHandler" path="/gameCenterWebSocket.action"/>
+		<websocket:handshake-interceptors>
+			<bean class="com.lx.gamecenter.interceptor.GameCenterWebSocketHandsharkInterceptor"/>
+		</websocket:handshake-interceptors>
+	</websocket:handlers>
+	
+</beans>
