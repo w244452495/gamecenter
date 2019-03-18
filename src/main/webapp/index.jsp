@@ -9,6 +9,7 @@
 	<link href="static/css/main/main.css" rel="stylesheet">
 	<script src="static/jquery/jquery-1.11.3.min.js"></script>
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="static/js/index.js"></script>
 </head>
 <body>
 	<c:choose>
@@ -33,9 +34,7 @@
 	<div class="padding-div">
 		<div class="btn-group">
 	  		<a class="btn btn-large btn-info dropdown-toggle" data-toggle="dropdown" href="#">Game Center&nbsp;&nbsp;&nbsp;<span class="caret"></span></a>
-	  		<ul class="dropdown-menu">
-	    		<li><a href="landlord/home">Fight Landload</a></li>
-	  		</ul>
+	  		<ul class="dropdown-menu" id="gameList"></ul>
 		</div>
 	</div>
 </body>
