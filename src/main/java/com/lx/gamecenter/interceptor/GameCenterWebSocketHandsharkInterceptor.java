@@ -1,9 +1,12 @@
 package com.lx.gamecenter.interceptor;
 
 import java.util.Map;
-
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.http.server.ServletServerHttpRequest;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
@@ -21,6 +24,12 @@ public class GameCenterWebSocketHandsharkInterceptor extends HttpSessionHandshak
 	@Override
 	public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
 		System.out.println("===============before interceptor=============== " + attributes);
+		// String jSessionId = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession().getId();
+		HttpServletRequest servletRequest = ((ServletServerHttpRequest) request).getServletRequest();
+		String type = servletRequest.getParameter("type");
+		String id = servletRequest.getParameter("id");
+		attributes.put("type", type);
+		attributes.put("id", id);
 		return super.beforeHandshake(request, response, wsHandler, attributes);
 	}
 	

@@ -42,6 +42,7 @@ public class TableController extends BaseController {
 	 */
 	@RequestMapping("/home")
 	public ModelAndView homePage(HttpServletRequest request) {
+		System.out.println(request.getSession().getId());
 		Map<String, Object> paramMap = this.getParams(request);
 		ModelAndView mv = new ModelAndView("table/home");
 		mv.addObject("gameId", paramMap.get("id"));

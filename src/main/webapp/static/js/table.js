@@ -7,7 +7,7 @@ $(function() {
 		type: 'POST',
 		url: 'table/queryTableListByGameId',
 		data: {
-			'gameId': $('#gameId').val().trim()
+			'gameId': $('#page_id').val().trim()
 		},
 		success: function(data) {
 			for(var i = 0; i < data.length; i++) {
@@ -19,11 +19,15 @@ $(function() {
 
 var ws = null;
 function openWebSocket() {
+	// 类型，game->游戏主页面，table->桌子主页面
+	var type = $('#page_type').val();
+	// id，游戏，桌子id
+	var id = $('#page_id').val();
 	if('WebSocket' in window) {
-		ws = new WebSocket('ws://localhost/gamecenter/gameCenterWebSocket.action');
+		ws = new WebSocket('ws://localhost/gamecenter/gameCenterWebSocket.action?type=' + type + '&id=' + id);
 		console.log('websocket已连接');
 	} else {
-		ws = new SockJs('http://localhost/gamecenter/gamecenter/sockjs/gameCenterWebSocket/info');
+		ws = new SockJs('http://localhost/gamecenter/gamecenter/sockjs/gameCenterWebSocket/info?type=' + type + '&id=' + id);
 		console.log('sockjs已连接');
 	}
 	

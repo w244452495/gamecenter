@@ -22,7 +22,8 @@
 		</div>
 	</div>
 	<div class="padding-div">
-		<input type="hidden" id="gameId" value="${gameId }" />
+		<input type="hidden" id="page_type" value="game" />
+		<input type="hidden" id="page_id" value="${gameId }" />
 		<h3 id="gameName">${gameName }</h3>
 		<div id="tableUrlList"></div>
 	</div>

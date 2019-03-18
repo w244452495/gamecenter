@@ -25,7 +25,6 @@ public class GameCenterWebSocketHandler extends TextWebSocketHandler {
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		String sessionId = session.getId();
-		System.out.println("连接成功：" + sessionId);
 		USER_MAP.put(sessionId, session);
 		System.out.println(USER_MAP);
 		super.afterConnectionEstablished(session);
@@ -38,7 +37,6 @@ public class GameCenterWebSocketHandler extends TextWebSocketHandler {
 			user.getValue().sendMessage(message);
 		}
 	}
-
 
 	@Override
 	public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
