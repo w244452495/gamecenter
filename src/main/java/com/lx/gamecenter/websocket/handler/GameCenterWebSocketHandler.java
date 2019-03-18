@@ -24,6 +24,12 @@ public class GameCenterWebSocketHandler extends TextWebSocketHandler {
 
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+		/**
+		 * 新建gc_user_game表，字段id,user_id,game_id，保存进入此游戏页面的用户
+		 * 根据访问类型（游戏/桌子）将用户信息写进gc_user_game，gc_user_site表
+		 * 根据访问类型（游戏/桌子）将session添加进redis
+		 * 用户退出时同步删除mysql+redis
+		 */
 		String sessionId = session.getId();
 		USER_MAP.put(sessionId, session);
 		System.out.println(USER_MAP);
