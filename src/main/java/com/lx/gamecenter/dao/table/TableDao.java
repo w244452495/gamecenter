@@ -9,4 +9,6 @@ import com.lx.gamecenter.entity.table.Table;
 public interface TableDao {
 	
 	List<Table> queryTableListByGameId(Map<String, Object> paramMap);
+	
+	List<Table> queryTableListByStatus(Map<String, Object> paramMap);
 }

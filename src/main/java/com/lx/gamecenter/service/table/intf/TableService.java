@@ -8,4 +8,6 @@ public interface TableService {
 	
 	List<Table> queryTableListByGameId(Map<String, Object> paramMap);
 	
+	Map<String, Object> queryForLoadTableStatusAndSiteUser(Map<String, Object> paramMap);
+	
 }

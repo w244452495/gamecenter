@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.lx.gamecenter.dao.table.TableDao">
+
+	<select id="queryTableListByGameId" resultType="Table">
+		SELECT
+		    t.id           AS "id",
+		    t.game_id      AS "gameId",
+		    t.max_site_num AS "maxSiteNum",
+		    t.table_html_id AS "tableHtmlId",
+		    t.game_status  AS "gameStatus",
+		    t.table_url    AS "tableUrl"
+		FROM
+		    GC_TABLE t
+		WHERE
+		    t.game_id = #{gameId}
+	</select>
+
+	<select id="queryTableListByStatus" resultType="Table">
+		SELECT
+		    t.id           AS "id",
+		    t.game_id      AS "gameId",
+		    t.max_site_num AS "maxSiteNum",
+		    t.table_html_id AS "tableHtmlId",
+		    t.game_status  AS "gameStatus",
+		    t.table_url    AS "tableUrl"
+		FROM
+		    GC_TABLE t
+		WHERE
+		    t.game_status = #{gameStatus}
+	</select>
+
+</mapper>

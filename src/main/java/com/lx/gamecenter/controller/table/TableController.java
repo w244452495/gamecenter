@@ -65,4 +65,11 @@ public class TableController extends BaseController {
 		return this.tableService.queryTableListByGameId(paramMap);
 	}
 	
+	@ResponseBody
+	@RequestMapping("/queryForLoadTableStatusAndSiteUser")
+	public Map<String, Object> queryForLoadTableStatusAndSiteUser(HttpServlertRequest request) {
+		Map<String, Object> paramMap = this.getParams(request);
+		return this.tableService.queryForLoadTableStatusAndSiteUser(paramMap);
+	}
+	
 }
