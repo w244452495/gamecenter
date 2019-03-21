@@ -6,14 +6,18 @@
 		SELECT
 			id AS "id",
 			game_name AS "gameName",
-			game_url AS "gameUrl"
+			game_url AS "gameUrl",
+			max_site_num AS "maxSiteNum"
 		FROM
 			GC_GAME
 	</select>
 	
-	<select id="queryGameNameById" resultType="String">
+	<select id="queryGameNameById" resultType="Game">
 		SELECT
-			game_name AS "gameName"
+			id AS "gameId",
+			game_name AS "gameName",
+			game_url AS "gameUrl",
+			max_site_num AS "maxSiteNum"
 		FROM
 			GC_GAME	
 		WHERE id = #{id}

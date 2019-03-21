@@ -10,6 +10,7 @@
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
 	<script src="http://cdn.jsdelivr.net/sockjs/1/sockjs.min.js"></script>
 	<script src="static/js/table.js"></script>
+	<script src="static/js/websocket-util.js"></script>
 </head>
 <body>
 	<div class="padding-div">
@@ -23,8 +24,9 @@
 	</div>
 	<div class="padding-div">
 		<input type="hidden" id="page_type" value="game" />
-		<input type="hidden" id="page_id" value="${gameId }" />
-		<h3 id="gameName">${gameName }</h3>
+		<input type="hidden" id="page_id" value="${game.gameId }" />
+		<input type="hidden" id="max_site_num" value="${game.maxSiteNum }" />
+		<h3 id="gameName">${game.gameName }</h3>
 		<div id="tableUrlList"></div>
 	</div>
 	<!-- <div id="websocketDiv">

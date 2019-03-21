@@ -20,7 +20,7 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public String queryGameNameById(Map<String, Object> paramMap) {
+	public Game queryGameNameById(Map<String, Object> paramMap) {
 		return this.gameDao.queryGameNameById(paramMap);
 	}
 	

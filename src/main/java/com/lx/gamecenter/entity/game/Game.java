@@ -12,6 +12,8 @@ public class Game implements Serializable {
 	
 	private String				gameUrl;
 	
+	private Integer				maxSiteNum;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -34,6 +36,14 @@ public class Game implements Serializable {
 	
 	public void setGameUrl(String gameUrl) {
 		this.gameUrl = gameUrl;
+	}
+
+	public Integer getMaxSiteNum() {
+		return maxSiteNum;
+	}
+
+	public void setMaxSiteNum(Integer maxSiteNum) {
+		this.maxSiteNum = maxSiteNum;
 	}
 	
 }

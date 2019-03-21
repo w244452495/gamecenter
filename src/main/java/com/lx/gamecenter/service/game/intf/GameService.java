@@ -8,6 +8,6 @@ public interface GameService {
 	
 	List<Game> queryGameList();
 	
-	String queryGameNameById(Map<String, Object> paramMap);
+	Game queryGameNameById(Map<String, Object> paramMap);
 	
 }

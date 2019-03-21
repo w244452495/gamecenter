@@ -45,8 +45,7 @@ public class TableController extends BaseController {
 		System.out.println(request.getSession().getId());
 		Map<String, Object> paramMap = this.getParams(request);
 		ModelAndView mv = new ModelAndView("table/home");
-		mv.addObject("gameId", paramMap.get("id"));
-		mv.addObject("gameName", this.gameService.queryGameNameById(paramMap));
+		mv.addObject("Game", this.gameService.queryGameNameById(paramMap));
 		return mv;
 	}
 	

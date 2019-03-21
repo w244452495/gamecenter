@@ -1,7 +1,7 @@
 $(function() {
 	// 页面加载时连接websocket
 	openWebSocket();
-	console.log(ws);
+	
 	// 获取所有桌子列表
 	$.ajax({
 		type: 'POST',
@@ -10,9 +10,21 @@ $(function() {
 			'gameId': $('#page_id').val().trim()
 		},
 		success: function(data) {
-			for(var i = 0; i < data.length; i++) {
-				$('#tableUrlList').append("<h4><a href=\"javascript:void(0);\" onclick=\"openTablePage('" + data[i].tableUrl + "')\">>>> Table " + data[i].id + " <span id=\"currentSiteUser\">( " + data[i].currentSiteNum + " / " + data[i].maxSiteNum + " )</span></a></h4>");
+			// 1.根据最大座位数渲染座位
+			var maxSiteNum = $('#maxSiteNum').val();
+			if (3 == maxSiteNum) {
+				loadThreeUsersTable(data);
+			} else if (4 == maxSiteNum) {
+				// loadFourUsersTable(data);
 			}
+			// 2.渲染当前桌子状态和用户座位状态
+			loadTableStatusAndSiteUser();
+			/*for(var i = 0; i < data.length; i++) {
+				$('#tableUrlList').append("<h4><a href=\"javascript:void(0);\" onclick=\"openTablePage('" + data[i].tableUrl + "')\">>>> Table " + data[i].id + " <span id=\"currentSiteUser\">( " + data[i].currentSiteNum + " / " + data[i].maxSiteNum + " )</span></a></h4>");
+			}*/
+		},
+		fail: function(data) {
+			alert('页面加载失败，请稍后重试！！！');
 		}
 	})
 })
@@ -25,10 +37,8 @@ function openWebSocket() {
 	var id = $('#page_id').val();
 	if('WebSocket' in window) {
 		ws = new WebSocket('ws://localhost/gamecenter/gameCenterWebSocket.action?type=' + type + '&id=' + id);
-		console.log('websocket已连接');
 	} else {
 		ws = new SockJs('http://localhost/gamecenter/gamecenter/sockjs/gameCenterWebSocket/info?type=' + type + '&id=' + id);
-		console.log('sockjs已连接');
 	}
 	
 	ws.open = function() {
@@ -36,9 +46,7 @@ function openWebSocket() {
 	}
 	
 	ws.onmessage = function(event) {
-		console.log(event)
 		var messageBox = $("#websocketDiv").html();
-		console.log(messageBox)
 		$("#websocketDiv").html(messageBox + event.data + '<br/>');
 	}
 	

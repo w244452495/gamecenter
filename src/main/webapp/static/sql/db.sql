@@ -22,12 +22,13 @@ CREATE TABLE
         id INT NOT NULL AUTO_INCREMENT COMMENT 'id',
         game_name VARCHAR(100) COMMENT '游戏名称',
 		game_url VARCHAR(256) COMMENT '游戏url',
+		max_site_num INT COMMENT '座位数',
         PRIMARY KEY (id)
     )
-    ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
     
-INSERT INTO gc_game (id, game_name, game_url) VALUES (1, '斗地主', 'table/landlord');
-INSERT INTO gc_game (id, game_name, game_url) VALUES (2, '德州扑克', 'javascript;');
+INSERT INTO gc_game (id, game_name, game_url, max_site_num) VALUES (10, '斗地主', 'table/landlord',3);
+INSERT INTO gc_game (id, game_name, game_url, max_site_num) VALUES (11, '德州扑克', 'javascript;',10);
 
 	
 CREATE TABLE
@@ -36,14 +37,15 @@ CREATE TABLE
         id INT NOT NULL AUTO_INCREMENT COMMENT 'id',
         game_id INT COMMENT '游戏id',
 		max_site_num INT COMMENT '座位数',
+        table_html_id VARCHAR(100) COMMENT 'HTML id',
 		game_status VARCHAR(2) COMMENT '游戏状态，0-未开始，1-进行中',
 		table_url VARCHAR(256) COMMENT '桌子url',
         PRIMARY KEY (id)
     )
     ENGINE=InnoDB DEFAULT CHARSET=utf8;
     
-INSERT INTO gc_table (id, game_id, max_site_num, game_status, table_url) VALUES (1, 1, 3, '0', 'landlord');
-INSERT INTO gc_table (id, game_id, max_site_num, game_status, table_url) VALUES (2, 1, 3, '0', 'landlord');
+INSERT INTO gc_table (id, game_id, max_site_num, table_html_id, game_status, table_url) VALUES (1, 10, 3, '#TABLE_0101', '0', 'landlord');
+INSERT INTO gc_table (id, game_id, max_site_num, table_html_id, game_status, table_url) VALUES (2, 10, 3, '#TABLE_0102', '0', 'landlord');
 
 	
 CREATE TABLE
@@ -62,7 +64,7 @@ CREATE TABLE
     )
     ENGINE=InnoDB DEFAULT CHARSET=utf8;
     
-INSERT INTO gc_user_site (id, user_id, user_name, game_id, table_id, site_id, site_html_id, game_status, user_poker) VALUES (1, 1, 'admin', 1, 1, 1, '#SITE_010101', '0', null);
+INSERT INTO gc_user_site (id, user_id, user_name, game_id, table_id, site_id, site_html_id, game_status, user_poker) VALUES (1, 1, 'admin', 10, 1, 1, '#SITE_010101', '0', null);
 
 	
 CREATE TABLE

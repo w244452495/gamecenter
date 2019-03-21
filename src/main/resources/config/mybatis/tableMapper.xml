@@ -6,15 +6,12 @@
 		SELECT
 		    t.id           AS "id",
 		    t.game_id      AS "gameId",
-		    (CASE WHEN s.current_user_num IS NULL THEN '0' ELSE s.current_user_num END) AS "currentSiteNum",
 		    t.max_site_num AS "maxSiteNum",
+		    t.table_html_id AS "tableHtmlId",
 		    t.game_status  AS "gameStatus",
 		    t.table_url    AS "tableUrl"
 		FROM
 		    GC_TABLE t
-		LEFT JOIN
-		    (SELECT u.table_id,COUNT(*) as current_user_num FROM GC_USER_SITE u WHERE u.game_id = #{gameId} GROUP BY u.table_id) s
-		ON t.id = s.table_id
 		WHERE
 		    t.game_id = #{gameId}
 	</select>
