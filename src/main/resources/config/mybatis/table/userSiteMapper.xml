@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="com.lx.gamecenter.dao.table.TableDao">
 
-	<select id="queryTableListByGameId" resultType="Table">
+	<select id="queryTableListByGameId1" resultType="Table">
 		SELECT
 		    t.id           AS "id",
 		    t.game_id      AS "gameId",

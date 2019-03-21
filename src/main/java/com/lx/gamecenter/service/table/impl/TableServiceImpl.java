@@ -1,13 +1,12 @@
 package com.lx.gamecenter.service.table.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.lx.gamecenter.dao.table.TableDao;
 import com.lx.gamecenter.entity.table.Table;
-import com.lx.gamecenter.service.table.intf.Object;
-import com.lx.gamecenter.service.table.intf.String;
 import com.lx.gamecenter.service.table.intf.TableService;
 
 @Service

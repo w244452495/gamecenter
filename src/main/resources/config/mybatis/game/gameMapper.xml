@@ -14,7 +14,7 @@
 	
 	<select id="queryGameNameById" resultType="Game">
 		SELECT
-			id AS "gameId",
+			id AS "id",
 			game_name AS "gameName",
 			game_url AS "gameUrl",
 			max_site_num AS "maxSiteNum"

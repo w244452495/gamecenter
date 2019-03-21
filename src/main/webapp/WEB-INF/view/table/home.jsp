@@ -24,10 +24,10 @@
 	</div>
 	<div class="padding-div">
 		<input type="hidden" id="page_type" value="game" />
-		<input type="hidden" id="page_id" value="${game.gameId }" />
+		<input type="hidden" id="page_id" value="${game.id }" />
 		<input type="hidden" id="max_site_num" value="${game.maxSiteNum }" />
 		<h3 id="gameName">${game.gameName }</h3>
-		<div id="tableUrlList"></div>
+		<div class="container"><div id="tableUrlList" class="row"></div></div>
 	</div>
 	<!-- <div id="websocketDiv">
 		消息列表<br />

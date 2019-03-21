@@ -11,7 +11,7 @@ $(function() {
 		},
 		success: function(data) {
 			// 1.根据最大座位数渲染座位
-			var maxSiteNum = $('#maxSiteNum').val();
+			var maxSiteNum = $('#max_site_num').val();
 			if (3 == maxSiteNum) {
 				loadThreeUsersTable(data);
 			} else if (4 == maxSiteNum) {

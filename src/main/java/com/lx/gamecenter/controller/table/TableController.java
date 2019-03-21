@@ -45,7 +45,7 @@ public class TableController extends BaseController {
 		System.out.println(request.getSession().getId());
 		Map<String, Object> paramMap = this.getParams(request);
 		ModelAndView mv = new ModelAndView("table/home");
-		mv.addObject("Game", this.gameService.queryGameNameById(paramMap));
+		mv.addObject("game", this.gameService.queryGameNameById(paramMap));
 		return mv;
 	}
 	
@@ -67,7 +67,7 @@ public class TableController extends BaseController {
 	
 	@ResponseBody
 	@RequestMapping("/queryForLoadTableStatusAndSiteUser")
-	public Map<String, Object> queryForLoadTableStatusAndSiteUser(HttpServlertRequest request) {
+	public Map<String, Object> queryForLoadTableStatusAndSiteUser(HttpServletRequest request) {
 		Map<String, Object> paramMap = this.getParams(request);
 		return this.tableService.queryForLoadTableStatusAndSiteUser(paramMap);
 	}
