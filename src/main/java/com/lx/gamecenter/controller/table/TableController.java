@@ -65,6 +65,14 @@ public class TableController extends BaseController {
 		return this.tableService.queryTableListByGameId(paramMap);
 	}
 	
+	/**
+	 * @Title: queryForLoadTableStatusAndSiteUser   
+	 * @Description: 获取所有执行中的桌子信息和所有座位用户的信息
+	 * @param: @param request
+	 * @param: @return      
+	 * @return: Map<String,Object>      
+	 * @throws
+	 */
 	@ResponseBody
 	@RequestMapping("/queryForLoadTableStatusAndSiteUser")
 	public Map<String, Object> queryForLoadTableStatusAndSiteUser(HttpServletRequest request) {

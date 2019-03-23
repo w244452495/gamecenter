@@ -19,9 +19,6 @@ $(function() {
 			}
 			// 2.渲染当前桌子状态和用户座位状态
 			loadTableStatusAndSiteUser();
-			/*for(var i = 0; i < data.length; i++) {
-				$('#tableUrlList').append("<h4><a href=\"javascript:void(0);\" onclick=\"openTablePage('" + data[i].tableUrl + "')\">>>> Table " + data[i].id + " <span id=\"currentSiteUser\">( " + data[i].currentSiteNum + " / " + data[i].maxSiteNum + " )</span></a></h4>");
-			}*/
 		},
 		fail: function(data) {
 			alert('页面加载失败，请稍后重试！！！');
@@ -53,14 +50,4 @@ function openWebSocket() {
 	ws.onclose = function(event) {
 		
 	}
-}
-
-function send() {
-	var message = $('#message').val();
-	ws.send(message);
-}
-
-function openTablePage(data) {
-	var b="width=960,height=540,left=100,top=50,resizable=yes,scrollbars=yes,menubar=no,copyhistory=no,toolbar=no,location=no,directories=no,status=no";
-	window.open(data,'_blank',b);
 }

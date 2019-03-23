@@ -19,7 +19,7 @@ public class Table implements Serializable {
 	
 	private Integer				gameId;
 	
-	private Integer				currentSiteNum;
+	private String				tableHtmlId;
 	
 	private Integer				maxSiteNum;
 	
@@ -43,12 +43,12 @@ public class Table implements Serializable {
 		this.gameId = gameId;
 	}
 	
-	public Integer getCurrentSiteNum() {
-		return currentSiteNum;
+	public String getTableHtmlId() {
+		return tableHtmlId;
 	}
 	
-	public void setCurrentSiteNum(Integer currentSiteNum) {
-		this.currentSiteNum = currentSiteNum;
+	public void setTableHtmlId(String tableHtmlId) {
+		this.tableHtmlId = tableHtmlId;
 	}
 	
 	public Integer getMaxSiteNum() {

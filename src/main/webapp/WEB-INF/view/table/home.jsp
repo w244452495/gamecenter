@@ -5,7 +5,7 @@
 	<title>Fight Landload</title>
 	<base href="${pageContext.request.contextPath }/gamecenter">
 	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="static/css/main/main.css" rel="stylesheet">
+	<link href="static/css/main.css" rel="stylesheet">
 	<script src="static/jquery/jquery-1.11.3.min.js"></script>
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
 	<script src="http://cdn.jsdelivr.net/sockjs/1/sockjs.min.js"></script>

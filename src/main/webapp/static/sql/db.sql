@@ -44,8 +44,8 @@ CREATE TABLE
     )
     ENGINE=InnoDB DEFAULT CHARSET=utf8;
     
-INSERT INTO gc_table (id, game_id, max_site_num, table_html_id, game_status, table_url) VALUES (1, 10, 3, '#TABLE_0101', '0', 'landlord');
-INSERT INTO gc_table (id, game_id, max_site_num, table_html_id, game_status, table_url) VALUES (2, 10, 3, '#TABLE_0102', '0', 'landlord');
+INSERT INTO gc_table (id, game_id, max_site_num, table_html_id, game_status, table_url) VALUES (1, 10, 3, '#TABLE_1001', '0', 'landlord');
+INSERT INTO gc_table (id, game_id, max_site_num, table_html_id, game_status, table_url) VALUES (2, 10, 3, '#TABLE_1002', '0', 'landlord');
 
 	
 CREATE TABLE
@@ -53,7 +53,7 @@ CREATE TABLE
     (
         id INT NOT NULL AUTO_INCREMENT COMMENT 'id',
 		user_id INT COMMENT '用户id',
-		user_name VARCHAR(32) COMMENT '用户名',
+		nickname VARCHAR(32) COMMENT '昵称',
         game_id INT COMMENT '游戏id',
         table_id INT COMMENT '桌子id',
         site_id INT COMMENT '座位id',
@@ -64,7 +64,7 @@ CREATE TABLE
     )
     ENGINE=InnoDB DEFAULT CHARSET=utf8;
     
-INSERT INTO gc_user_site (id, user_id, user_name, game_id, table_id, site_id, site_html_id, game_status, user_poker) VALUES (1, 1, 'admin', 10, 1, 1, '#SITE_010101', '0', null);
+INSERT INTO gc_user_site (id, user_id, nickname, game_id, table_id, site_id, site_html_id, game_status, user_poker) VALUES (1, 1, '管理员', 10, 1, 1, '#SITE_100101', '0', null);
 
 	
 CREATE TABLE
