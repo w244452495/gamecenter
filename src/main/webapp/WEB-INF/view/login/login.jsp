@@ -5,7 +5,7 @@
 	<title>请登录...</title>
 	<base href="${pageContext.request.contextPath }/gamecenter">
 	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="static/css/login/login.css" rel="stylesheet">
+	<link href="static/css/login.css" rel="stylesheet">
 	<script src="static/jquery/jquery-1.11.3.min.js"></script>
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
 </head>
