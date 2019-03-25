@@ -8,7 +8,8 @@
 	<link href="static/css/main/main.css" rel="stylesheet">
 	<script src="static/jquery/jquery-1.11.3.min.js"></script>
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
-	<script src="http://cdn.jsdelivr.net/sockjs/1/sockjs.min.js"></script>
+	<script src="static/sockjs/sockjs.min.js"></script>
+	<!-- <script src="http://cdn.jsdelivr.net/sockjs/1/sockjs.min.js"></script> -->
 	<script src="static/js/table.js"></script>
 	<script src="static/js/websocket-util.js"></script>
 </head>
