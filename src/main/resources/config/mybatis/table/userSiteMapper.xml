@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="com.lx.gamecenter.dao.table.TableDao">
+<mapper namespace="com.lx.gamecenter.dao.table.UserSiteDao">
 
-	<select id="queryTableListByGameId1" resultType="Table">
+	<select id="queryUserSiteListByGameIdAndGameStatus" resultType="UserSite">
 		SELECT
-		    t.id           AS "id",
-		    t.game_id      AS "gameId",
-		    t.max_site_num AS "maxSiteNum",
-		    t.table_html_id AS "tableHtmlId",
-		    t.game_status  AS "gameStatus",
-		    t.table_url    AS "tableUrl"
+		    id AS "id",
+			user_id AS "userId",
+			nickname AS "nickname",
+			game_id AS "gameId",
+			table_id AS "tableId",
+			site_id AS "siteId",
+			site_html_id AS "siteHtmlId",
+			game_status AS "gameStatus",
+			user_poker AS "userPoker"
 		FROM
-		    GC_TABLE t
+		    GC_USER_SITE
 		WHERE
-		    t.game_id = #{gameId}
+			game_id = #{gameId}
 	</select>
 
 </mapper>

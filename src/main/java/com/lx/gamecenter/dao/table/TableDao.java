@@ -10,5 +10,5 @@ public interface TableDao {
 	
 	List<Table> queryTableListByGameId(Map<String, Object> paramMap);
 	
-	List<Table> queryTableListByStatus(Map<String, Object> paramMap);
+	List<Table> queryTableListByGameIdAndGameStatus(Map<String, Object> paramMap);
 }

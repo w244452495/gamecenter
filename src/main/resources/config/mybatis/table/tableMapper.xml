@@ -16,7 +16,7 @@
 		    t.game_id = #{gameId}
 	</select>
 
-	<select id="queryTableListByStatus" resultType="Table">
+	<select id="queryTableListByGameIdAndGameStatus" resultType="Table">
 		SELECT
 		    t.id           AS "id",
 		    t.game_id      AS "gameId",
@@ -27,7 +27,8 @@
 		FROM
 		    GC_TABLE t
 		WHERE
-		    t.game_status = #{gameStatus}
+			t.game_id = #{gameId}
+		AND t.game_status = #{gameStatus}
 	</select>
 
 </mapper>

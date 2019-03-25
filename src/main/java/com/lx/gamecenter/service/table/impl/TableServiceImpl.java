@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.lx.gamecenter.dao.table.TableDao;
+import com.lx.gamecenter.dao.table.UserSiteDao;
 import com.lx.gamecenter.entity.table.Table;
 import com.lx.gamecenter.service.table.intf.TableService;
 
@@ -13,7 +14,10 @@ import com.lx.gamecenter.service.table.intf.TableService;
 public class TableServiceImpl implements TableService {
 	
 	@Autowired
-	private TableDao tableDao;
+	private TableDao	tableDao;
+	
+	@Autowired
+	private UserSiteDao	userSiteDao;
 	
 	@Override
 	public List<Table> queryTableListByGameId(Map<String, Object> paramMap) {
@@ -24,8 +28,8 @@ public class TableServiceImpl implements TableService {
 	public Map<String, Object> queryForLoadTableStatusAndSiteUser(Map<String, Object> paramMap) {
 		paramMap.put("gameStatus", "1");
 		Map<String, Object> returnMap = new HashMap<>();
-		returnMap.put("table", this.tableDao.queryTableListByStatus(paramMap));
-		returnMap.put("site", null);
+		returnMap.put("table", this.tableDao.queryTableListByGameIdAndGameStatus(paramMap));
+		returnMap.put("site", this.userSiteDao.queryUserSiteListByGameIdAndGameStatus(paramMap));
 		return returnMap;
 	}
 	
