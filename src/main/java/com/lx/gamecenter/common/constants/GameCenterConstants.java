@@ -2,14 +2,17 @@ package com.lx.gamecenter.common.constants;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import com.lx.gamecenter.entity.fightLandlord.Poker;
 
 public class GameCenterConstants {
-
-	public static final String LOGIN_SESSION_REPFIX = "loginSession_";
 	
-	public static final Map<Integer, Poker> POKER_ENTITY_MAP = new HashMap<>();
+	public static final String				LOGIN_SESSION_REPFIX	= "loginSession_";
+	
+	public static final String				GAME_SESSION_PREFIX		= "gameSession_";
+	
+	public static final String				TABLE_SESSION_PREFIX	= "tableSession_";
+	
+	public static final Map<Integer, Poker>	POKER_ENTITY_MAP		= new HashMap<>();
 	
 	static {
 		POKER_ENTITY_MAP.put(1, new Poker(1, 3, "♠3"));

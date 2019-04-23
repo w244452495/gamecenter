@@ -21,7 +21,6 @@ public class GameCenterWebSocketHandsharkInterceptor extends HttpSessionHandshak
 
 	@Override
 	public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
-		System.out.println("===============before interceptor=============== " + attributes);
 		// String jSessionId = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest().getSession().getId();
 		HttpServletRequest servletRequest = ((ServletServerHttpRequest) request).getServletRequest();
 		String type = servletRequest.getParameter("type");

@@ -8,7 +8,7 @@ import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
 import com.lx.gamecenter.interceptor.GameCenterWebSocketHandsharkInterceptor;
-import com.lx.gamecenter.websocket.handler.GameCenterWebSocketHandler;
+import com.lx.gamecenter.websocket.handler.GameWebSocketHandler;
 
 /**
  * 
@@ -34,8 +34,8 @@ public class GameCenterWebsocketConfig implements WebSocketConfigurer {
 	}
 	
 	@Bean
-	public GameCenterWebSocketHandler getHandler() {
-		return new GameCenterWebSocketHandler();
+	public GameWebSocketHandler getHandler() {
+		return new GameWebSocketHandler();
 	}
 
 }

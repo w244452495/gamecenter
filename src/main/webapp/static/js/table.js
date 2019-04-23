@@ -33,9 +33,9 @@ function openWebSocket() {
 	// id，游戏，桌子id
 	var id = $('#page_id').val();
 	if('WebSocket' in window) {
-		ws = new WebSocket('ws://localhost/gamecenter/gameCenterWebSocket.action?type=' + type + '&id=' + id);
+		ws = new WebSocket('ws://localhost/gamecenter/gameWebSocket.action?type=' + type + '&id=' + id);
 	} else {
-		ws = new SockJs('http://localhost/gamecenter/gamecenter/sockjs/gameCenterWebSocket/info?type=' + type + '&id=' + id);
+		ws = new SockJs('http://localhost/gamecenter/gamecenter/sockjs/gameWebSocket/info?type=' + type + '&id=' + id);
 	}
 	
 	ws.open = function() {
